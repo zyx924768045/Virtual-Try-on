@@ -1,0 +1,14 @@
+<html>
+          <head>
+            <title>Upload and Display Image</title>
+          </head>
+          <body>
+            <h2>Upload Image</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+              <input type="file" name="image">
+              <input type="submit" value="Upload">
+            </form>
+            <h2>Uploaded Image</h2>
+            <img src="/uploads/{{filename}}" />
+          </body>
+</html>
