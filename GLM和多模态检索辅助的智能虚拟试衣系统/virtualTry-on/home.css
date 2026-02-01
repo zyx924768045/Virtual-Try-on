@@ -1,0 +1,277 @@
+/*首页样式表*/
+.logo {
+  position: absolute;
+  float: left;
+  color: #ff7979;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  top: 30px;
+  left: 40px;
+  z-index: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.33);
+}
+
+.hamburger {
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  right: 60px;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  cursor: pointer;
+  display: block;
+  border-radius: 15px;
+}
+
+.backtotop{
+  width: 40px;
+  height: 40px;
+  bottom: 40px;
+  right: 60px;
+  z-index: 1;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.backtotop img{
+  width: 40px;
+  height: 40px;
+}
+
+.bun {
+  position: relative;
+}
+
+.topanim {
+  transform: translateY(6.5px) rotate(45deg);
+  animation: topmerge 0.3s ease-in-out;
+  transition: transform .3s ease-in-out animation ease-in-out .3s;
+}
+
+.botanim {
+  transform: translateY(-6.5px) rotate(-45deg);
+  animation: botmerge 0.3s ease-in-out;
+  transition: transform .3s ease-in-out animation ease-in-out .3s;
+}
+
+@keyframes topmerge {
+  20% {
+    top: 15px;
+  }
+
+  100% {
+    top: 10px;
+  }
+}
+
+@keyframes botmerge {
+  20% {
+    top: 15px;
+  }
+
+  100% {
+    top: 20px;
+  }
+}
+
+#top-bun {
+  display: block;
+  position: relative;
+  left: 5px;
+  top: 10px;
+  background: black;
+  height: 4px;
+  width: 30px;
+  transition: transform .3s ease-in-out, animation .3s ease-in-out .3s;
+}
+
+#bot-bun {
+  display: block;
+  position: relative;
+  left: 5px;
+  top: 20px;
+  background: black;
+  height: 4px;
+  width: 30px;
+  transition: transform .3s ease-in-out, animation .3s ease-in-out .3s;
+}
+
+.toggle {
+  position: fixed;
+  height: 125px;
+  width: 200px;
+  right: 60px;
+  top: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.toggle-enter-from,
+.toggle-leave-to {
+  opacity: 0;
+}
+
+.toggle-enter-active,
+.toggle-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.toggle ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.toggle ul ul {
+  color: #ff7979;
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 2px solid black;
+  cursor: pointer;
+  border-width: 75%;
+  transition: all 0.5s ease-in-out;
+}
+
+.toggle ul ul:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.toggle ul ul:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.toggle ul ul:last-child {
+  border-bottom: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.nav{
+  height: 200px;
+  position: fixed;
+  right: 10px;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.welcome {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: thistle;
+  overflow: hidden;
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  top:-40%;
+  left:-40%;
+  width:200%;
+  height:200%;
+  background: url(./src/assets/image0.png);
+  background-repeat: repeat-x;
+  background-size: 100%;
+  opacity: .7;
+  animation: welcomeanim 40s infinite ease-in-out;
+}
+
+@keyframes welcomeanim {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  25% {
+    transform: translate(10%, 10%);
+  }
+
+  50% {
+    transform: translate(0%, 20%);
+  }
+
+  75% {
+    transform: translate(-10%, 10%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.welcome-content {
+  position: relative;
+  top: 25%;
+  left: 20%;
+  max-width: 60%;
+  z-index: 1;
+  font-family: "monsterrat", sans-serif;
+  opacity: 0;
+  /* 初始状态透明度为0，即不可见 */
+  transform: translateY(50px);
+  /* 元素向下移动50px，隐藏在屏幕下方 */
+  animation: fade-up 1s ease-out forwards;
+  /* 通过动画名称和时间控制元素逐渐渐显现并移回原来的位置 */
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    /* 元素开始时处于向下移动的状态 */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* 元素移动回原来的位置并逐渐变得可见 */
+  }
+}
+
+.welcome-content h1 {
+  background: linear-gradient(135deg, #ff8400, #f679ff, #ff0303);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 84px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  animation: titleanim 12s linear infinite;
+}
+
+@keyframes titleanim {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.welcome-content p {
+  margin-bottom: 30px;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.welcome-content div {
+  color: #ff7979;
+  border: 3px solid #ff7979;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: 150px;
+  padding: 10px 20px;
+  margin: auto;
+  transition: 0.5s linear;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.33);
+}
+
+.welcome-content div:hover {
+  color: #fff;
+  background: #ff7979;
+}

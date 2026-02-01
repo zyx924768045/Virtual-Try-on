@@ -1,0 +1,48 @@
+const urlJson = [
+    {"id":1,"source":["M_S_BlackShirt_1.jpg","M_S_BlackShirt_2.jpg","M_S_BlackShirt_3.jpg","M_S_BlackShirt_4.jpg"],
+    "url":['https://detail.tmall.com/item.htm?abbucket=10&id=703994135317&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.332.30361724wTClXR',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=675477917298&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.215.30361724wTClXR',
+    'https://item.m.jd.com/product/100045527744.html?gx=RnE1ljIKYTOLmNRP--sxBWzcd4X1ET3oDzQ&ad_od=share&utm_source=androidapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=CopyURL',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=673290927675&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.55.30361724wTClXR']},
+    {"id":2,"source":["M_S_BlackShirt_5.jpg","M_S_BlackShirt_6.jpg","M_S_BlackShirt_7.jpg","M_S_BlackShirt_8.jpg"],
+    "url":['https://detail.tmall.com/item.htm?abbucket=10&id=710998283491&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.605.30361724wTClXR',
+    'https://detail.tmall.com/item.htm?ali_refid=a3_420434_1006:1110208406:N:chl5GcqUY3DpAS/T2%20K9PTVb5%20k6PK7i:bdc759666fbfdc41e49a8ca8e9d6ca92&ali_trackid=162_bdc759666fbfdc41e49a8ca8e9d6ca92&id=675840244054&spm=a230r.1.1957635.26',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=637844384519&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.690.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=705273671678&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.771.2d6217243HgQLw']},
+    {"id":3,"source":["M_S_Letter_1.jpg","M_S_Letter_2.jpg","M_S_Letter_3.jpg","M_S_Letter_4.jpg"],
+    "url":['https://detail.tmall.com/item.htm?abbucket=10&id=704061853940&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.784.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=702311560485&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.373.30361724wTClXR',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=670472658771&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.789.30361724wTClXR',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=705332078450&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.649.30361724wTClXR']},
+    {"id":4,"source":["M_S_Letter_5.jpg","M_S_Letter_6.jpg","M_S_Letter_7.jpg","M_S_Letter_8.jpg"],
+    "url":['https://detail.tmall.com/item.htm?abbucket=10&id=674664497929&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.293.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=672507019845&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.513.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=703565489436&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.666.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=669634105376&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.151.2d6217243HgQLw']},
+    {"id":5,"source":["F_L_Culotte_1.jpg","F_L_Culotte_2.jpg","F_L_Culotte_3.jpg","F_L_Culotte_4.jpg"],
+    "url":['https://detail.tmall.com/item.htm?abbucket=10&id=706836228254&ns=1&spm=a230r.1.14.85.7c552667wdgVpZ',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=706185346455&ns=1&spm=a230r.1.14.237.7c552667wdgVpZ&sku_properties=1627207:28331',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=711333441926&ns=1&spm=a230r.1.14.185.7c552667wdgVpZ',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=671286161342&ns=1&spm=a230r.1.14.253.7c552667wdgVpZ']},
+    {"id":6,"source":["recommend1.jpg","recommend2.jpg","recommend3.jpg","recommend4.jpg"],
+    "url":['https://item.taobao.com/item.htm?spm=a230r.1.14.214.104d7dcbmgXKX3&id=704923959460&ns=1&abbucket=10#detail',
+    'https://item.taobao.com/item.htm?spm=a230r.1.14.104.5314e69fBV1WL4&id=711759155993&ns=1&abbucket=10#detail',
+    'https://item.taobao.com/item.htm?spm=a230r.1.14.241.13855378Qhp6im&id=575327411952&ns=1&abbucket=10#detail',
+    '暂无链接']},
+    {"id":7,"source":["M_S_Animals_1.jpg","M_S_Animals_2.jpg","M_S_Animals_3.jpg","M_S_Animals_4.jpg"],
+    "url":['https://detail.tmall.com/item.htm?spm=a230r.1.14.155.2d6217243HgQLw&id=705057648624&ns=1&abbucket=10&sku_properties=1627207:28341',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=702006198941&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.178.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=674669312778&ns=1&sku_properties=1627207:21712984987&spm=a230r.1.14.37.2d6217243HgQLw',
+    'https://detail.tmall.com/item.htm?abbucket=10&id=705791329154&ns=1&sku_properties=1627207:28341&spm=a230r.1.14.470.2d6217243HgQLw']},
+  ]
+const waeranswer = ['您可以选择以下几种方式搭配裤子：☺️<br>搭配黑色裤子：白色衬衫和黑色裤子是经典的搭配，可以让您看起来干净利落，尤其适合正式场合。<br>搭配蓝色牛仔裤：白色衬衫和蓝色牛仔裤是休闲搭配的首选，可以让您看起来时尚又随性。<br>搭配灰色裤子：白色衬衫和灰色裤子是比较中性的搭配，适合在工作场合或者日常生活中穿着。<br>搭配卡其色裤子：白色衬衫和卡其色裤子是比较轻松的搭配，可以让您看起来既舒适又有型。<br>无论您选择哪种搭配方式，都要注意衣服的质地和款式，以确保整体搭配的协调和谐。','男士聚会穿搭可以根据不同场合选择不同的服装。比如，如果是正式场合，可以选择西装，衬衫，领带等。如果是休闲场合，可以选择T恤，牛仔裤等。如果是运动场合，可以选择运动服装等。当然还有很多其他的选择。您可以根据自己的喜好和场合来选择适合自己的穿搭哦！😉','在正式场合，男士一般以西装为正装。外面穿黑色西装，里面搭配白色衬衫，下面穿西裤。衬衫应以白色为主，必须是长袖衬衫。西裤应是配套的，也就是说你应该穿的是套装西服。在重要会议和会谈、庄重的仪式以及正式宴请等场合，男士一般以西装为正装。与工作有关的场合都比较正式严肃，需要有一个看起来较为稳重的形象，适合以西装为主，结合低调的偏冷色调。希望这些信息能对你有所帮助。']
+const querysearch = [{value:'黑色短袖'},
+  {value:'黑色西装'},
+  {value:'白色衬衫'},
+  {value:'浅蓝色牛仔裤'}]
+export default  {
+    urlJson,
+    waeranswer,
+    querysearch
+  }
+  

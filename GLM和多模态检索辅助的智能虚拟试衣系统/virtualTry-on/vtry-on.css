@@ -1,0 +1,328 @@
+/*虚拟换衣样式表*/
+.vtry-on-background {
+  width: 100%;
+  height: 100vh;
+  background: rgb(75, 0, 142);
+  background: linear-gradient(180deg, rgba(75, 0, 142, 1) 0%, rgba(110, 67, 133, 1) 100%);
+  /*scroll-snap-align: start;*/
+}
+
+.vtry-on-nav {
+  width: 100%;
+  height: 60px;
+  top: 0;
+  background-size: cover;
+}
+
+.popper-style {
+  height: fit-content;
+  margin-top: 60px;
+  margin-left: 7%;
+  padding: 20px 30px;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+}
+
+.instruction {
+  height: 40px;
+  width: 80px;
+  float: left;
+  top: 30px;
+  margin-left: 20px;
+  position: relative;
+  background-color: #E0C3FC;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  line-height: 40px;
+  font-size: 14px;
+  color: black;
+}
+
+.instruction:hover {
+  background: #8EC5FC;
+}
+
+.modalw-img {
+  height: 20px;
+  width: 20px;
+}
+
+.vtry-on-content {
+  background-color: #8EC5FC;
+  background-image: url("./src/assets/Header 13.png");
+  background-size: cover;
+  background-position: center;
+  width: 85%;
+  left: 7.5%;
+  position: relative;
+  top: 50%;
+  margin-top: -330px;
+  padding: 20px 0px 40px 0px;
+  /*上右下左*/
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+}
+
+.vtry-on-title {
+  width: 100%;
+}
+
+.vtry-on-core {
+  width: 90%;
+  height: 25%;
+  display: flex;
+  margin-left: 5%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  overflow-x: scroll;
+  position: relative;
+  right: 3%;
+}
+
+.vtry-on-img-container {
+  display: block;
+  width: 250px;
+  height: 450px;
+  margin-left: 15px;
+  margin-right: 15px;
+  position: relative;
+}
+
+.vtry-on-img-container:nth-child(1) {
+  margin-left: 45px;
+}
+
+.vtry-on-img-title {
+  width: 100%;
+}
+
+.vtry-on-image {
+  position: relative;
+  height: 280px;
+  width: 245px;
+  left: calc(50% - 122.5px);
+  top: calc(20px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  border-radius: 5px;
+}
+
+.vtry-on-image-v {
+  position: relative;
+  height: 320px;
+  width: 200px;
+  left: calc(50% - 100px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  border-radius: 5px;
+}
+
+.delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  user-select: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.delete:hover {
+  background-color: rgba(31, 31, 31, 0.5);
+  color: white;
+}
+
+.vtry-on-image:hover .delete {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.vtry-on-image-v:hover .delete {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.front {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  user-select: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.front:hover {
+  background-color: rgba(31, 31, 31, 0.5);
+  color: white;
+}
+
+.vtry-on-image:hover .front {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.vtry-on-image-v:hover .front {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.back {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  user-select: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.back:hover {
+  background-color: rgba(31, 31, 31, 0.5);
+  color: white;
+}
+
+.vtry-on-image:hover .back {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.vtry-on-image-v:hover .back {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.upload {
+  width: 80px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px black;
+  border-radius: 5px;
+  left: calc(50% - 40px);
+  bottom: 20px;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+
+.upload:hover {
+  background-color: #ff7979;
+  color: #fff;
+}
+
+.upload::before {
+  content: '上传图片';
+  width: inherit;
+  font-size: 13px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 30px;
+  user-select: none;
+  position: absolute;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+}
+
+#cloth,
+#modal {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vtry-on-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.vtry-on-img-bt {
+  bottom: 20px;
+  height: 30px;
+  width: 80px;
+  line-height: 30px;
+  font-size: 13px;
+  background-color: rgba(255, 255, 255, 0.5);
+  left: calc(50% - 40px);
+  position: absolute;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vtry-on-img-bt:hover {
+  background-color: #ff7979;
+  color: #fff;
+}
+
+.plus {
+  line-height: 420px;
+  height: 420px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 48px;
+}
+
+.transform {
+  line-height: 420px;
+  height: 420px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 32px;
+}
+
+.vtry-on-img-para {
+  height: 30px;
+  min-width: 80px;
+  width: 120px;
+  position: relative;
+  font-size: 13px;
+  line-height: 30px;
+  background-color: #ffffff80;
+  margin-bottom: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  box-shadow: 0 2px 8px #00000054;
+}
+
+.vtry-on-img-clear {
+  height: 30px;
+  min-width: 80px;
+  width: 80px;
+  position: relative;
+  font-size: 13px;
+  line-height: 30px;
+  background-color: #ffffff80;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  box-shadow: 0 2px 8px #00000054;
+  margin: auto;
+}
+
+.vtry-on-img-clear:hover {
+  background-color: #ff7979;
+  color: #fff;
+}
+
+button {
+  border-radius: 5px;
+}
