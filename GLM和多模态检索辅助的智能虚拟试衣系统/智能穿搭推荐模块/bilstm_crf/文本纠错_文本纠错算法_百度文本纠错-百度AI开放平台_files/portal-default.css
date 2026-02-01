@@ -1,0 +1,319 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, em, img, b, u, i, q,
+dl, dt, dd, ol, ul, li,
+article, aside, footer,
+menu, header, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+    text-decoration: none;
+	font-style: normal;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, footer, header, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+	content: none;
+}
+.cloud-header-pc {
+  width: 100%;
+  height: 64px;
+  position: relative;
+}
+.cloud-header-pc a:hover {
+  text-decoration: none;
+}
+.cloud-header-pc .cloud-header-wrapper {
+  width: 100%;
+  height: 64px;
+  position: relative;
+  z-index: 9999;
+}
+.cloud-header-pc .header-default {
+  box-sizing: border-box;
+  width: 100%;
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(34, 34, 34, 0.16);
+  position: relative;
+  background: #FFFFFF;
+  z-index: 9999;
+}
+.cloud-header-pc .header-default .left-wrapper {
+  width: 0;
+  flex: 1;
+  margin-right: 52px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cloud-header-pc .header-default .left-wrapper nav {
+  margin-left: 20px;
+  flex-shrink: 1;
+  position: relative;
+  height: 64px;
+  overflow-y: hidden;
+}
+.cloud-header-pc .header-default .left-wrapper nav .left-cover,
+.cloud-header-pc .header-default .left-wrapper nav .right-cover {
+  display: none;
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  left: 0;
+  top: 50%;
+  z-index: 10;
+  margin-top: -15px;
+  background: #fff;
+  background: linear-gradient(90deg, #fff 30%, rgba(255, 255, 255, 0) 90%);
+}
+.cloud-header-pc .header-default .left-wrapper nav .left-cover::after,
+.cloud-header-pc .header-default .left-wrapper nav .right-cover::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 12px;
+  height: 5px;
+  width: 5px;
+  background: transparent;
+  border-left: 1px solid #191A24;
+  border-bottom: 1px solid #191A24;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.cloud-header-pc .header-default .left-wrapper nav .left-cover:hover::after,
+.cloud-header-pc .header-default .left-wrapper nav .right-cover:hover::after {
+  border-color: #2468f2;
+}
+.cloud-header-pc .header-default .left-wrapper nav .right-cover {
+  left: auto;
+  right: 0px;
+  background-image: linear-gradient(-90deg, #fff 30%, rgba(255, 255, 255, 0) 90%);
+}
+.cloud-header-pc .header-default .left-wrapper nav .right-cover::after {
+  left: auto;
+  right: 1px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.cloud-header-pc .header-default .left-wrapper nav .cloud-nav {
+  display: flex;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 84px;
+}
+.cloud-header-pc .header-default .left-wrapper nav .cloud-nav > li {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+.cloud-header-pc .header-default .left-wrapper nav .cloud-nav > li > a {
+  padding: 0 10px;
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #191A24;
+  line-height: 64px;
+}
+.cloud-header-pc .header-default .left-wrapper nav .cloud-nav > li.active-line {
+  position: absolute;
+  width: 0;
+  top: 62px;
+  z-index: 1;
+  padding: 0;
+  height: 3px;
+  background-color: #2468f2;
+  transition: all 0.2s linear;
+}
+.cloud-header-pc .header-default .right-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.cloud-header-pc .header-default .right-wrapper .header-search-wrapper {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: relative;
+}
+.cloud-header-pc .header-default .right-wrapper .header-search-wrapper .search-icon {
+  width: 17px;
+  height: 17px;
+  background: url('https://bce.bdstatic.com/p3m/common-service/uploads/search_a4f7f48.svg') no-repeat center;
+  background-size: 100% 100%;
+}
+.cloud-header-pc .header-default .right-wrapper .header-search-wrapper .search-icon:hover {
+  background-image: url('https://bce.bdstatic.com/p3m/common-service/uploads/search_hover_64621fc.svg');
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-control {
+  *zoom: 1;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-control::after {
+  content: '';
+  display: block;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  clear: both;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-control li {
+  float: left;
+  padding: 0 10px;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-control li > a {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #191A24;
+  line-height: 64px;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-control li > a:hover {
+  color: #2468f2;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang {
+  position: relative;
+  width: 76px;
+  height: 28px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 100;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang::after {
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 5px;
+  width: 5px;
+  opacity: 0.8;
+  background: transparent;
+  border-left: 1px solid #191A24;
+  border-bottom: 1px solid #191A24;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang:hover {
+  overflow: visible;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang:hover::after {
+  top: 13px;
+  border-color: #2468F2;
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  -ms-transform: rotate(-225deg);
+  -o-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang:hover span {
+  color: #2468F2;
+  opacity: 1;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang ul {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang span {
+  height: 28px;
+  padding-left: 12px;
+  background-color: #fff;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  line-height: 28px;
+  text-align: left;
+  color: rgba(69, 74, 91, 0.8);
+  cursor: pointer;
+  opacity: 1;
+  font-size: 14px;
+  color: #191A24;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li {
+  height: 28px;
+  padding-left: 12px;
+  background-color: #fff;
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  line-height: 28px;
+  text-align: left;
+  color: rgba(69, 74, 91, 0.8);
+  cursor: pointer;
+  opacity: 1;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li a {
+  color: #454A5B;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li.ch-lang-tit {
+  color: #454a5b;
+  font-weight: bold;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li.current,
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li.current a {
+  color: #2468F2;
+}
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li:hover:not(.ch-lang-tit),
+.cloud-header-pc .header-default .right-wrapper .cloud-header-lang li:hover:not(.ch-lang-tit) a {
+  color: #2468F2;
+}
+.cloud-header-pc .header-default .right-wrapper .line {
+  width: 1px;
+  height: 16px;
+  background-color: #D6D6D6;
+  margin: 0 20px 0 10px;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register {
+  display: flex;
+  align-items: center;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register li > a {
+  display: block;
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #191A24;
+  line-height: 64px;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register li > a:hover {
+  color: #2468f2;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register li.nav-login {
+  padding: 0 20px 0 0;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register li.nav-register {
+  width: 57px;
+  height: 28px;
+  background: #2468F2;
+  border-radius: 4px;
+  text-align: center;
+  transition: background-color 0.3s linear;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register li.nav-register:hover {
+  background: #4E84F2;
+}
+.cloud-header-pc .header-default .right-wrapper .login-register li.nav-register > a {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  color: #FFFFFF;
+  line-height: 28px;
+}

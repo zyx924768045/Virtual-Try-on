@@ -1,0 +1,14 @@
+define('solution', [
+    'require',
+    './common',
+    'sidebar'
+], function (require) {
+    var common = require('./common');
+    var sideScroll = require('sidebar');
+    var exports = {};
+    exports.init = function () {
+        common.init();
+        sideScroll.init('.sidebar', '.solution-wrap > .content');
+    };
+    return exports;
+});

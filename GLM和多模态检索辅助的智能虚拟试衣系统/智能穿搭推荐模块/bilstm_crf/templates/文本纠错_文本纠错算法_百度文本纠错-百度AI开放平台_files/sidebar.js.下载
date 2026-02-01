@@ -1,0 +1,159 @@
+define('sidebar', [
+    'require',
+    'jquery',
+    'isMobile'
+], function (require) {
+    var $ = require('jquery');
+    var isMobile = require('isMobile');
+    var exports = {};
+    var sideScroll = {
+        historyWin2Top: 0,
+        fixed: {
+            top: null,
+            bottom: null
+        },
+        absolute: 0,
+        topAbs: 0,
+        tempVal: null,
+        useAbsolute: true,
+        bottom: false,
+        top: true,
+        useFixed: false,
+        change: false,
+        change2fixedBottom: function () {
+            this.useAbsolute = false;
+            this.fixed.top = false;
+            this.fixed.bottom = true;
+            this.useFixed = true;
+            this.change = true;
+            this.bottom = false;
+            this.top = false;
+        },
+        change2fixedTop: function () {
+            this.useAbsolute = false;
+            this.fixed.top = true;
+            this.fixed.bottom = false;
+            this.useFixed = true;
+            this.change = true;
+            this.bottom = false;
+            this.top = false;
+        },
+        change2abs: function () {
+            this.useAbsolute = true;
+            this.fixed.top = false;
+            this.fixed.bottom = false;
+            this.useFixed = false;
+            this.change = true;
+            this.bottom = false;
+        },
+        change2absBottom: function () {
+            this.useAbsolute = true;
+            this.fixed.top = false;
+            this.fixed.bottom = false;
+            this.useFixed = false;
+            this.change = true;
+            this.bottom = true;
+            this.top = false;
+        },
+        edgeJudge: function () {
+            var contentEle = this.contentEle;
+            var sidebarEle = this.sidebarEle;
+            var content2top = contentEle.offset().top;
+            var sideH = sidebarEle.height();
+            var side2top = sidebarEle.offset().top;
+            var contentH = contentEle.height();
+            var headerH = $('header').height();
+            headerH = this.headerFixed ? headerH : 0;
+            var win2top = this.win.scrollTop() + headerH;
+            var winH = this.win.height() - headerH;
+            var isHighWindow = winH > sideH;
+            if (win2top < content2top && !this.top) {
+                this.change2abs();
+                this.top = true;
+                this.absolute = this.topAbs;
+            } else if (win2top + winH > content2top + contentH && !this.bottom && !isHighWindow) {
+                this.change2absBottom();
+                this.absolute = 'auto';
+            } else if (win2top >= content2top && win2top + winH <= content2top + contentH && !isHighWindow) {
+                if (win2top + winH >= side2top + sideH && win2top - this.historyWin2Top > 0 && this.useAbsolute) {
+                    this.change2fixedBottom();
+                } else if (win2top <= side2top && win2top - this.historyWin2Top < 0 && this.useAbsolute) {
+                    this.change2fixedTop();
+                } else if (this.fixed.bottom && win2top - this.historyWin2Top < 0 || this.fixed.top && win2top - this.historyWin2Top > 0) {
+                    this.change2abs();
+                    this.absolute = side2top - content2top;
+                }
+            } else if (win2top >= content2top && isHighWindow) {
+                if (win2top + sideH >= content2top + contentH && win2top - this.historyWin2Top > 0 && !this.bottom) {
+                    this.change2absBottom();
+                    this.absolute = 'auto';
+                } else if (win2top + sideH < content2top + contentH && this.useAbsolute) {
+                    this.change2fixedTop();
+                }
+            }
+            this.historyWin2Top = win2top;
+            if (this.change) {
+                this.setStyle();
+                this.change = false;
+            }
+        },
+        setStyle: function () {
+            var sidebarEle = this.sidebarEle;
+            var main2left = $('main').offset().left;
+            if (this.bottom) {
+                sideScroll.lastUl.css('border-bottom-width', '0');
+            } else {
+                sideScroll.lastUl.css('border-bottom-width', '2px');
+            }
+            if (this.fixed.top || this.fixed.bottom) {
+                var topFixed = this.headerFixed ? '60px' : '0px';
+                sidebarEle.css({
+                    position: 'fixed',
+                    bottom: this.fixed.top ? 'auto' : 0,
+                    top: this.fixed.top ? topFixed : 'auto',
+                    left: main2left + 'px'
+                });
+            } else if (this.useAbsolute) {
+                sidebarEle.css({
+                    position: 'absolute',
+                    top: this.bottom ? 'auto' : this.absolute + 'px',
+                    bottom: this.bottom ? 0 : 'auto',
+                    left: 0
+                });
+            }
+        },
+        setLeft: function () {
+            var sidebarEle = this.sidebarEle;
+            var main2left = $('main').offset().left;
+            if (this.useFixed) {
+                sidebarEle.css('left', main2left + 'px');
+            } else if (this.useAbsolute) {
+                sidebarEle.css('left', 0);
+            }
+        }
+    };
+    exports.init = function (sidebar, content, headerFixed) {
+        var sidebarEle = $(sidebar);
+        var contentEle = $(content);
+        var win = $(window);
+        if (sidebarEle[0] && contentEle.height() > sidebarEle.height() && !isMobile.any) {
+            win.on('scroll', function () {
+                sideScroll.edgeJudge();
+            });
+            win.on('mousewheel', function () {
+                sideScroll.edgeJudge();
+            });
+            win.on('resize', function () {
+                sideScroll.edgeJudge();
+                sideScroll.setLeft();
+            });
+            sideScroll.sidebarEle = sidebarEle;
+            sideScroll.contentEle = contentEle;
+            sideScroll.win = win;
+            sideScroll.lastUl = sidebarEle.children('ul:last');
+            sideScroll.headerFixed = headerFixed === undefined ? true : headerFixed || false;
+            sideScroll.edgeJudge();
+        }
+    };
+    return exports;
+});
